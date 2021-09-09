@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyC9ooDc17eYJYAPj0CUAsIYSM7V-Ymrp3U",
+        authDomain: "learn-firebase-bd226.firebaseapp.com",
+        projectId: "learn-firebase-bd226",
+        storageBucket: "learn-firebase-bd226.appspot.com",
+        messagingSenderId: "34819910815",
+        appId: "1:34819910815:web:37e4ae3fafe3d676f446aa",
+        measurementId: "G-50PZWV8LC5",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <h1>Hello World App!</h1>
+
+    <section id="whenSignedOutSection">
+      <h3>Please sign in!</h3>
+      <button id="signInBtn" class="btn btn-primary">Sign in</button>
+      <button id="signInWithGoogleBtn" class="btn btn-primary">
+        Sign in with Google
+      </button>
+    </section>
+
+    <section id="whenSignedInSection" hidden="true">
+      <button id="signOutBtn" class="btn btn-primary">Sign Out</button>
+      <button id="newProductBtn" class="btn btn-primary">
+        Add New Product
+      </button>
+      <button id="viewProductBtn" class="btn btn-primary">
+        View My products! 
+      </button>
+
+      <section id="newProductSection" hidden="true">
+        <label for="Pname">Product name:</label><br />
+        <input type="text" id="productNameTxt"  /><br />
+        <label for="Pprice">Product price:</label><br />
+        <input type="text" id="productPriceTxt" /><br /><br />
+        <button id="submitNewProductBtn" class="btn btn-primary">Save</button>
+      </section>
+      
+      <section id="viewProductSection" hidden="true">
+        <h2>My Products</h2>
+
+        <ul id="productsList">
+
+        </ul>
+      </section>
+
+    </section>
+  </body>
+</html>
